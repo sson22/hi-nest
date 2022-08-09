@@ -25,10 +25,6 @@ export class MoviesController {
     return this.moviesService.getAll();
   }
 
-  @Get('search')
-  search(@Query('year') searchingYear: number) {
-    return `We are searching for a movie with year after ${searchingYear}`;
-  }
   @Get(':id')
   getOne(@Param('id') movieId: number) {
     const movie = this.moviesService.getOne(movieId);
